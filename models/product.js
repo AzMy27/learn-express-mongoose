@@ -3,23 +3,28 @@ const mongoose = require("mongoose");
 const productSchema = new mongoose.Schema({
   name: {
     type: String,
-    require: true,
+    required: [true, "nama tidak boleh kosong"],
   },
   brand: {
     type: String,
-    require: true,
+    required: true,
   },
   price: {
     type: Number,
-    require: true,
+    required: true,
   },
   color: {
     type: String,
-    require: true,
+    required: true,
   },
-  size: {
-    type: Number,
-    enum: ["S", "M", "L", "XL"],
+  category: {
+    type: String,
+    enum: [
+      "Baju",
+      "Celana",
+      "Aksesoris",
+      "Jaket",
+    ],
   },
 });
 

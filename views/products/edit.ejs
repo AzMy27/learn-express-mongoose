@@ -9,10 +9,10 @@
     <title>Update Products</title>
   </head>
   <body>
-    <h1>Add a Products</h1>
+    <h1>Edit a Products</h1>
     <form
-      action="/products/<%=product._id %>"
-      method="post"
+      action="/products/<%= product._id %>?_method=PUT"
+      method="POST"
     >
       <label for="name">Nama Produk</label>
       <input
@@ -44,31 +44,11 @@
       />
       <label for="category">Kategori</label>
       <select name="category" id="category">
-        <option
-          value="Aksesoris"
-          value="<%= product.category == 'Aksesoris' ? 'selected' : '' %>"
-        >
-          Aksesoris
-        </option>
-        <option
-          value="Baju"
-          value="<%= product.category == 'Baju' ? 'selected' : '' %>"
-        >
-          Baju
-        </option>
-        <option
-          value="Celana"
-          value="<%= product.category == 'Celana' ? 'selected' : '' %>"
-        >
-          Celana
-        </option>
-        <option
-          value="Jaket"
-          value="<%= product.category == 'Jaket' ? 'selected' : '' %>"
-        >
-          Jaket
-        </option>
-      </select>
+        <option value="Aksesoris" <%= product.category == 'Aksesoris' ? 'selected' : '' %>>Aksesoris</option>
+        <option value="Baju" <%= product.category == 'Baju' ? 'selected' : '' %>>Baju</option>
+        <option value="Celana" <%= product.category == 'Celana' ? 'selected' : '' %>>Celana</option>
+        <option value="Jaket" <%= product.category == 'Jaket' ? 'selected' : '' %>>Jaket</option>
+    </select>
       <button type="submit">Submit</button>
     </form>
   </body>

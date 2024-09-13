@@ -10,7 +10,10 @@
   </head>
   <body>
     <h1>Add a Products</h1>
-    <form action="/products" method="post">
+    <form
+      action="/garments/<%= garment_id %>/products"
+      method="post"
+    >
       <label for="name">Nama Produk</label>
       <input type="text" name="name" id="name" />
       <label for="brand">Brand</label>

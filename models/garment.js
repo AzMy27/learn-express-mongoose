@@ -11,11 +11,14 @@ const garmentSchema = new mongoose.Schema({
     type: String,
     required: [true, "Kontak tidak boleh kosong"],
   },
-  garment: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Garment",
-  },
+  products: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Product",
+    },
+  ],
 });
+
 const Garment = mongoose.model(
   "Garment",
   garmentSchema

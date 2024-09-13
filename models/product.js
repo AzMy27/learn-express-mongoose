@@ -27,12 +27,10 @@ const productSchema = new mongoose.Schema({
       "Jaket",
     ],
   },
-  products: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Product",
-    },
-  ],
+  garment: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Garment",
+  },
 });
 
 const Product = mongoose.model(
